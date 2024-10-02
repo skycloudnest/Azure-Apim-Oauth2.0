@@ -63,6 +63,7 @@ module "inbound_api_operation" {
   api_management_name       = module.azure_api_management.name
 
   custom_xml_policy_prepend = <<XML
+    <set-header name="Authorization" exists-action="delete" />
     <set-backend-service id="apim-generated-policy" base-url="{{sample-logic-app-url}}" />
     <rewrite-uri template="/triggers/request/paths/invoke?api-version=2016-10-01&amp;sp=%2Ftriggers%2Frequest%2Frun&amp;sv=1.0&amp;sig={{sample-logic-app-sas}}" />
 XML
