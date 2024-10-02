@@ -1,0 +1,6 @@
+openapi: 3.0.1
+info:
+  title: Logic app api
+  description: 'Logic app api'
+  version: '1.0'
+paths: {}
